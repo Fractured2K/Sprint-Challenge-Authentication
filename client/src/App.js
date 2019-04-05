@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import './App.css';
 
 import Register from './components/Auth/Register';
+import Login from './components/Auth/Login';
 
 class App extends Component {
 	render() {
@@ -12,6 +13,8 @@ class App extends Component {
 					path="/register"
 					render={props => <Register {...props} />}
 				/>
+
+				<Route path="/login" render={props => <Login {...props} />} />
 			</div>
 		);
 	}
