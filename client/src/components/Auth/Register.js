@@ -42,7 +42,13 @@ class Register extends Component {
 
 		axios
 			.post('http://localhost:5000/api/register', this.state)
-			.then(res => localStorage.setItem('token', res.data))
+			.then(res => {
+				localStorage.setItem('token', res.data);
+				this.setState({
+					username: '',
+					password: ''
+				});
+			})
 			.catch(err => console.log(err));
 	};
 }
