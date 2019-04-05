@@ -6,4 +6,9 @@ import App from './App';
 
 const AppWithRouter = withRouter(App);
 
-ReactDOM.render(<AppWithRouter />, document.getElementById('root'));
+ReactDOM.render(
+	<Router>
+		<AppWithRouter />
+	</Router>,
+	document.getElementById('root')
+);
