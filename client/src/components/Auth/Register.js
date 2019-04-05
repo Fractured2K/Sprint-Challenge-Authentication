@@ -44,6 +44,9 @@ class Register extends Component {
 			.post('http://localhost:5000/api/register', this.state)
 			.then(res => {
 				localStorage.setItem('token', res.data);
+
+				this.props.history.push('/jokes');
+
 				this.setState({
 					username: '',
 					password: ''
