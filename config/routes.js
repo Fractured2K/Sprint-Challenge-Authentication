@@ -65,3 +65,16 @@ function getJokes(req, res) {
 			});
 		});
 }
+
+function generateToken(user) {
+	console.log(user);
+	const payload = {
+		username: user.username
+	};
+
+	const options = {
+		expiresIn: '1d'
+	};
+
+	return jwt.sign(payload, process.env.JWT_SECRET, options);
+}
