@@ -4,6 +4,7 @@ import './App.css';
 
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
+import JokeList from './components/JokeList';
 
 class App extends Component {
 	render() {
@@ -17,7 +18,7 @@ class App extends Component {
 				) : (
 					<Fragment>
 						<NavLink to="/register">Register</NavLink>{' '}
-						<NavLink to="/Login">Login</NavLink>{' '}
+						<NavLink to="/login">Login</NavLink>{' '}
 					</Fragment>
 				)}
 				<Route
@@ -25,6 +26,10 @@ class App extends Component {
 					render={props => <Register {...props} />}
 				/>
 				<Route path="/login" render={props => <Login {...props} />} />
+				<Route
+					path="/jokes"
+					render={props => <JokeList {...props} />}
+				/>
 			</div>
 		);
 	}

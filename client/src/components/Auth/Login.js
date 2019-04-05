@@ -45,12 +45,12 @@ class Login extends Component {
 			.then(res => {
 				localStorage.setItem('token', res.data);
 
-				this.props.history.push('/jokes');
-
 				this.setState({
 					username: '',
 					password: ''
 				});
+
+				this.props.history.push('/jokes');
 			})
 			.catch(err => console.log(err));
 	};
