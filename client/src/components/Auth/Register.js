@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Register extends Component {
 	state = {
@@ -34,6 +35,15 @@ class Register extends Component {
 		this.setState({
 			[e.target.name]: e.target.value
 		});
+	};
+
+	onSubmit = e => {
+		e.preventDefault();
+
+		axios
+			.post('http://localhost:5000/api/register', this.state)
+			.then(res => localStorage.setItem('token', res.data))
+			.catch(err => console.log(err));
 	};
 }
 
