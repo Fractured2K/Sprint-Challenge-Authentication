@@ -14,6 +14,9 @@ class App extends Component {
 				{localStorage.getItem('token') ? (
 					<Fragment>
 						<NavLink to="/jokes">Jokes</NavLink>{' '}
+						<NavLink to="/login" onClick={this.logOut}>
+							Log out
+						</NavLink>
 					</Fragment>
 				) : (
 					<Fragment>
@@ -33,6 +36,10 @@ class App extends Component {
 			</div>
 		);
 	}
+
+	logOut = e => {
+		localStorage.removeItem('token');
+	};
 }
 
 export default App;
